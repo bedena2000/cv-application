@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import PersonalDetails from './components/PersonalDetails.js';
+import Cv from './components/Cv.js';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      title: '',
+      phone: '',
+      email: '',
+      location: '',
+      description: '',
+      company: '',
+      position: '',
+      startDate: '',
+      endDate: '',
+      workDescription: '',
+      course: '',
+      university: '',
+      eduStartDate: '',
+      eduEndDate: '',
+      eduDescription: '',
+    }
+    this.dataChange = this.dataChange.bind(this);
+  }; 
+  dataChange(dataType, text) {
+    this.setState({
+      [dataType]: text,
+    })
+  }
+  render() {
+    return (
+      <div className="app">
+        <PersonalDetails dataChange={this.dataChange}/>
+        <Cv cvData={this.state}/>
+      </div>
+    )
+  }
+};
 
 export default App;

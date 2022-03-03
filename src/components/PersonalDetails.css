@@ -1,0 +1,28 @@
+.personal-wrapper-container {
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.personal-title {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-item, .description-input {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  border: 2px solid white;
+}
+
+.input-item:focus-visible {
+  border: 2px solid black;
+}
